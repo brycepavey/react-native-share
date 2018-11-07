@@ -118,7 +118,7 @@ public class ShareFile {
 
         final MimeTypeMap mime = MimeTypeMap.getSingleton();
         this.extension = mime.getExtensionFromMimeType(getType());
-        final String authority = ((ShareApplication) reactContext.getApplicationContext()).getFileProviderAuthority();
+        final String authority = (reactContext.getPackageName()) + ".provider";
 
         if(this.isBase64File()) {
             String encodedImg = this.uri.getSchemeSpecificPart().substring(this.uri.getSchemeSpecificPart().indexOf(";base64,") + 8);
